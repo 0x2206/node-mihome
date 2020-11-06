@@ -17,7 +17,7 @@ npm install miio
 ## Usage
 
 ```javascript
-const mihome = require('mihome');
+const mihome = require("mihome");
 ```
 
 Login Mijia account to use cloud protocol. It's optional but some devices aren't supported local protocol so you need login to control that devices.
@@ -27,8 +27,8 @@ Init protocols
 ```javascript
 mihome.miioProtocol.init();
 mihome.aqaraProtocol.init();
-const username = 'email@example.com';
-const password = 'password';
+const username = "email@example.com";
+const password = "password";
 await mihome.miCloudProtocol.login(username, password);
 ```
 
@@ -51,7 +51,7 @@ const device = mihome.device({
   address: '192.168.31.13', // miio-device option, local ip address
   token: 'abcdefgfabcdefgfabcdefgfabcdefgf', // miio-device option, device token
   refresh: 30000 // miio-device option, interval refresh device properties in ms
-  
+
   parent: '1234abcd', // aqara-device option, gateway SID for aqara-protocol device
 });
 device.on('properties', (data) => {
@@ -68,15 +68,14 @@ List properties and methods of device can be found at ./devices folder
 
 The populate nodejs package for xiaomi devices current is miio: https://github.com/aholstenson/miio
 
-| | node-mihome | miio |
-| :--- |:----: | :-----:|
-| implement miio protocol | **yes** | **yes** |
-| implement miot protocol (for many device exp. mi purifier 3) | **yes** | no |
-| implement aqara protocol (for zigbee devices) | **full** | no (except read actions) |
-| implement micloud protocol (easy to view the device token and many useful information, control devices from internet, control devices which not allow from LAN, ...) | **yes** | no |
-| number of devices | **large** | medium |
-| update | **usually** | a long time since last update |
-
+|                                                                                                                                                                      | node-mihome |             miio              |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------------------------: |
+| implement miio protocol                                                                                                                                              |   **yes**   |            **yes**            |
+| implement miot protocol (for many device exp. mi purifier 3)                                                                                                         |   **yes**   |              no               |
+| implement aqara protocol (for zigbee devices)                                                                                                                        |  **full**   |   no (except read actions)    |
+| implement micloud protocol (easy to view the device token and many useful information, control devices from internet, control devices which not allow from LAN, ...) |   **yes**   |              no               |
+| number of devices                                                                                                                                                    |  **large**  |            medium             |
+| update                                                                                                                                                               | **usually** | a long time since last update |
 
 ## Todos list
 
